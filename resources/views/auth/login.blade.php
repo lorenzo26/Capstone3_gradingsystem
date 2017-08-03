@@ -2,7 +2,7 @@
 
 @section('content')
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-<div class="container">
+<!-- <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
@@ -64,8 +64,8 @@
         </div>
     </div>
 </div>
+ -->
 
-<!-- 
  <form class="form-horizontal" method="POST" action="{{ route('login') }}">
                         {{ csrf_field() }} 
 <div class="container borderStudent">
@@ -84,8 +84,8 @@
     </div>
     <div class="back">
       <i class="fa fa-user"></i>
-      <input type="text" id="username" placeholder="username" name="id" class="form-control" >
-      <button type="button" onclick="next('username');"><i class="fa fa-chevron-right" aria-hidden="true"></i></button>
+      <input type="email" id="email" placeholder="email" name="email" class="form-control" >
+      <button type="button" onclick="next('email');"><i class="fa fa-chevron-right" aria-hidden="true"></i></button>
     </div>
     <div class="bottom">
       <div class="loading-animation">
@@ -126,5 +126,5 @@ var add_remove_effects = function(ref,classname){
     },450);     
 }
 
-</script> -->
+</script>
 @endsection
