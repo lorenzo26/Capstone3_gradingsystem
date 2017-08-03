@@ -24,8 +24,8 @@
     </div>
     <div class="back">
       <i class="fa fa-user"></i>
-      <input type="text" id="username" placeholder="username" name="id" class="form-control" >
-      <button type="button" onclick="next('username');"><i class="fa fa-chevron-right" aria-hidden="true"></i></button>
+     <input type="email" id="email" placeholder="email" name="email" class="form-control" >
+      <button type="button" onclick="next('email');"><i class="fa fa-chevron-right" aria-hidden="true"></i></button>
     </div>
     <div class="bottom">
       <div class="loading-animation">
