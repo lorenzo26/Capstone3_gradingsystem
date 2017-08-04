@@ -11,6 +11,15 @@
       );
     </script>
   @endif
+   @if(Session::has('messagepass'))  
+    <script type="text/javascript">
+      swal(
+      'Not Match Password and Confirmation',
+      '',
+      'error',
+      );
+    </script>
+  @endif
 
 <section class="content-header">
       <h1>
@@ -77,6 +86,24 @@
             </div>      
             <div class="box-footer clearfix">
               <button type="submit" class="pull-right btn btn-default" name="upschool">Update Information
+                <i class="fa fa-arrow-circle-up"></i>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="box box-primary">
+        <div class="box-body box-profile">
+          <h3>User Password</h3>
+          <form method="post">
+          {{ csrf_field() }}
+            <div class="form-group">
+              <input type="password" class="form-control" name="NewPassword"  placeholder="Enter your New Password" required>
+              <input type="password" class="form-control" name="Confirmation"  placeholder="Enter your Confirmation" required>    
+            </div>      
+            <div class="box-footer clearfix">
+              <button type="submit" class="pull-right btn btn-default" name="upPass">Update Information
                 <i class="fa fa-arrow-circle-up"></i>
               </button>
             </div>

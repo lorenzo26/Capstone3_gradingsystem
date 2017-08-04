@@ -12,6 +12,7 @@ use App\Subject;
 use App\Student_Subject;
 use App\Student;
 use App\User;
+use Session;
 
 class StudentController extends Controller
 {
@@ -34,8 +35,9 @@ class StudentController extends Controller
             // dd($prof);
             $prof -> avatar = 'assets/images/'.$filename;    
             $prof -> save();
+             Session::flash('message',' ');
        
-        }else{
+        }elseif(isset($request->lastname)){
             $updateData = Student::find($id);
             $updateData -> lname = $request -> lastname;
             $updateData -> fname = $request -> firstname;
@@ -45,7 +47,19 @@ class StudentController extends Controller
             $updateEmail = User::find($id);
             $updateEmail -> email = $request -> email;
             $updateEmail ->save();
+             Session::flash('message',' ');
+        }else{
+
+            if ($request->NewPassword==$request->Confirmation) {
+                $updatePass = User::find($id);
+                $updatePass -> password = $request-> NewPassword;
+                $updatePass -> save();
+            }else
+
+             Session::flash('messagepass',' ');
+             return back();
         }
+        
 
 
         return back();

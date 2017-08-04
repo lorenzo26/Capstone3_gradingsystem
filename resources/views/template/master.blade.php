@@ -420,7 +420,7 @@
             <span>Grades</span>
             </a>
             <ul class="treeview-menu">
-               <li><a href="{{ url('student/grades') }}/{{ Auth::user()->id}}">Grades</a></li>
+               <li><a href="{{ url('student/grades') }}/{{ Auth::user()->id}}"><i class="fa fa-circle-o"></i>Grades</a></li>
             </ul>
           </li>
           <li class="treeview">

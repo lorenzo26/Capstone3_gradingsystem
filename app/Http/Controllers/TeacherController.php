@@ -182,7 +182,7 @@ class TeacherController extends Controller
              Session::flash('message',' ');    
             $prof -> save();
        
-        }else{
+        }elseif(isset($request->lastname)){
             $updateData = Teacher::find($id);
             $updateData -> lname = $request -> lastname;
             $updateData -> fname = $request -> firstname;
@@ -193,6 +193,16 @@ class TeacherController extends Controller
             $updateEmail -> email = $request -> email;
              Session::flash('message',' ');
             $updateEmail ->save();
+        }else{
+
+            if ($request->NewPassword==$request->Confirmation) {
+                $updatePass = User::find($id);
+                $updatePass -> password = $request-> NewPassword;
+                $updatePass -> save();
+            }else
+
+             Session::flash('messagepass',' ');
+             return back();
         }
         
        

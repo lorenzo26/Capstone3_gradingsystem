@@ -12,6 +12,7 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 use App\Http\Requests;
 use Illuminate\Http\Request;
 use DB;
+use Session;
 
 class RegisterController extends Controller
 {
@@ -121,7 +122,7 @@ class RegisterController extends Controller
         ]);      
 
         }
-
+         Session::flash('register',' ');
         return $user;
     }
 

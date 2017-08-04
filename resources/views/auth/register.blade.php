@@ -15,7 +15,7 @@
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('fname') ? ' has-error' : '' }}">
-                            <label for="fname" class="col-md-4 control-label">fName</label>
+                            <label for="fname" class="col-md-4 control-label">First Name</label>
 
                             <div class="col-md-6">
                                 <input id="fname" type="text" class="form-control" name="fname" value="{{ old('fname') }}" required autofocus>
@@ -29,7 +29,7 @@
                         </div>
 
                         <div class="form-group{{ $errors->has('mname') ? ' has-error' : '' }}">
-                            <label for="mname" class="col-md-4 control-label">mName</label>
+                            <label for="mname" class="col-md-4 control-label">Middle Name</label>
 
                             <div class="col-md-6">
                                 <input id="mname" type="text" class="form-control" name="mname" value="{{ old('mname') }}" required autofocus>
@@ -43,7 +43,7 @@
                         </div>
 
                         <div class="form-group{{ $errors->has('lname') ? ' has-error' : '' }}">
-                            <label for="lname" class="col-md-4 control-label">lName</label>
+                            <label for="lname" class="col-md-4 control-label">Last Name</label>
 
                             <div class="col-md-6">
                                 <input id="lname" type="text" class="form-control" name="lname" value="{{ old('lname') }}" required autofocus>
@@ -57,7 +57,7 @@
                         </div>
                 
                          <div class="form-group{{ $errors->has('gender') ? ' has-error' : '' }}">
-                            <label for="gender" class="col-md-4 control-label">gender</label>
+                            <label for="gender" class="col-md-4 control-label">Gender</label>
 
                             <div class="col-md-6">
                                <select id="gender" name="gender" class="form-control"  value="{{ old('gender') }}"  required autofocus>
@@ -74,7 +74,7 @@
                         </div>
 
                          <div class="form-group{{ $errors->has('address') ? ' has-error' : '' }}">
-                            <label for="address" class="col-md-4 control-label">address</label>
+                            <label for="address" class="col-md-4 control-label">Address</label>
 
                             <div class="col-md-6">
                                 <input id="address" type="text" class="form-control" name="address" value="{{ old('address') }}" required autofocus>
