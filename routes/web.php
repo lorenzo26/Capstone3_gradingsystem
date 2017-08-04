@@ -61,7 +61,7 @@ Route::get('/teacher/update_grade/{id}/{sub_id}', 'TeacherController@showUpdateG
 /*Show the form for update Grade*/
 
 
-
+Route::post('/teacher/update_grade/{id}/{sub_id}', 'TeacherController@updateGrades');
 /*/Show*/
 
 

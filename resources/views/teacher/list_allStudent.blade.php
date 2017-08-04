@@ -2,16 +2,27 @@
 
 
   @section('content')    
+
+  @if(Session::has('message'))  
+    <script type="text/javascript">
+      swal(
+      'Student have been Added!',
+      '',
+      'success',
+      );
+    </script>
+  @endif
   <section class="content-header">
  <h1>
         List of Students
       
       </h1>
-      <ol class="breadcrumb"> 
+       <ol class="breadcrumb">
         <li><a href="/home"><i class="fa fa-dashboard"></i> Home</a></li>
         <li><a href="/teacher/list_subject"> List of Subject</a></li>
-        <li class="active"> List of Students </li>
-      </ol>
+         <li><a href="/teacher/list_subjstudent/"> List of Student in Subject</a></li>
+        <li class="active">List of Students</li>
+      </ol> 
     </section>
 
   <div class="borderStudent">

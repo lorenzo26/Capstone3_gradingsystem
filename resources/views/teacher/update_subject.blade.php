@@ -3,6 +3,16 @@
 
 @section('content')
 <section class="content-header">
+
+  @if(Session::has('message'))  
+    <script type="text/javascript">
+      swal(
+      'Subject have been Updated!',
+      '',
+      'success',
+      );
+    </script>
+  @endif
  <h1>
         Update Created Subject
       

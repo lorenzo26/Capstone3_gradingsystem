@@ -55,7 +55,7 @@
                         <a href ='{{ url("/teacher/update_grade/$student->student_id") }}/{{$subject->subject_id}}'>
                           <button class = 'btn btn-success' title="EDIT GRADE"><i class="fa fa-pencil-square" aria-hidden="true"></i></button>
                         </a>
-                        <a href ='{{ url("/teacher/list_subjstudent/delete/$student->student_id") }}/{{$subject->subject_id}}'>
+                        <a href ='{{ url("/teacher/list_subjstudent/delete/$student->student_id") }}/{{$subject->subject_id}}'  class="delete"  data-confirm="Are you sure to delete this item?">
                           <button class = 'btn btn-danger' title="DELETE  {{ $student -> lname}}, {{ $student -> fname}} {{ $student -> mname}}"><i class="fa fa-trash" aria-hidden="true"></i></button>
                         </a>
                         <!-- <a href ='#'>
@@ -73,6 +73,22 @@
       </section>
     </section>
   </div>
+
+   <script type="text/javascript">
+    var deleteLinks = document.querySelectorAll('.delete');
+
+for (var i = 0; i < deleteLinks.length; i++) {
+    deleteLinks[i].addEventListener('click', function(event) {
+        event.preventDefault();
+
+        var choice = confirm(this.getAttribute('data-confirm'));
+
+        if (choice) {
+            window.location.href = this.getAttribute('href');
+        }
+    });
+}
+  </script>
 
 
 

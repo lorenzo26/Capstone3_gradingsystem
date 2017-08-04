@@ -2,6 +2,15 @@
 
 
 @section('content')    
+  @if(Session::has('message'))  
+    <script type="text/javascript">
+      swal(
+      'Information have been Updated!',
+      '',
+      'success',
+      );
+    </script>
+  @endif
 
 <section class="content-header">
       <h1>

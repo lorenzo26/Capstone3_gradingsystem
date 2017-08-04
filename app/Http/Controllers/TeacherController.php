@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;	
 use Illuminate\Support\Facades\DB;
+use Session;
 
 
 use App\Student;
@@ -73,6 +74,8 @@ class TeacherController extends Controller
                $updateSubject -> save();
            
     }
+
+         Session::flash('message',' ');
       return back();
     }/*Show list of Student in Subject*/
     public function listallStudent($id)
@@ -117,6 +120,7 @@ class TeacherController extends Controller
         if(isset($request->first)){
             $grading = 'first_grading';
             $grade = $request->first;
+
         }
         else if(isset($request->second)){
             $grading = 'second_grading';
@@ -134,8 +138,37 @@ class TeacherController extends Controller
         $subject = Subject::find($sub_id);
         $subject->students()->where('students.student_id',$id)->first()->pivot->update([$grading => $grade]);
 
+
+         Session::flash('message',' ');
         return back();
     }
+
+
+     public function updateGrades(Request $request, $id, $sub_id){
+        if(isset($request->first)){
+            $grading = 'first_grading';
+            $grade = $request->first;
+        }
+        else if(isset($request->second)){
+            $grading = 'second_grading';
+            $grade = $request->second;
+        }
+        else if(isset($request->third)){
+            $grading = 'third_grading';
+            $grade = $request->third;
+        }
+        else{
+            $grading = 'fourth_grading';
+            $grade = $request->fourth;    
+        }
+        
+        $subject = Subject::find($sub_id);
+        $subject->students()->where('students.student_id',$id)->first()->pivot->update([$grading => $grade]);
+          Session::flash('message',' ');
+
+        return back();
+    }
+
 
  public function updateProfile(Request $request, $id){
         if(isset($request->f1)){
@@ -145,7 +178,8 @@ class TeacherController extends Controller
             $image->move('assets/images/',$filename);
             $prof= Teacher::find($id);
             // dd($prof);
-            $prof -> avatar = 'assets/images/'.$filename;    
+            $prof -> avatar = 'assets/images/'.$filename;
+             Session::flash('message',' ');    
             $prof -> save();
        
         }else{
@@ -157,6 +191,7 @@ class TeacherController extends Controller
             $updateData ->save();
             $updateEmail = User::find($id);
             $updateEmail -> email = $request -> email;
+             Session::flash('message',' ');
             $updateEmail ->save();
         }
         
@@ -183,7 +218,8 @@ class TeacherController extends Controller
         $teacher_subject-> subjectName =  $request -> subjname;
          $teacher_subject-> year =  $request -> year;
         $teacher_subject->save();
-        return redirect('teacher/list_subject');   
+        Session::flash('message',' ');
+        return back();   
     
     }/*Add Subject*/
 
@@ -223,9 +259,13 @@ class TeacherController extends Controller
         // $subjStudents_tble-> teacher_id = Auth::id();
         // $subjStudents_tble-> student_id =  $request -> student;
         // $subjStudents_tble->save();
+     Session::flash('message',' ');
+
         return back();  
     
     }/*Add student in Subject*/
+
+
 
 	
 

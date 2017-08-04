@@ -211,6 +211,11 @@
   <script src="{{URL::to('assets/jquery/jquery-2.2.3.min.js')}}"></script>
   <script src="{{URL::to('js/app.min.js')}}"></script>
   <script src="{{URL::to('js/bootstrap.min.js')}}"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.6/sweetalert2.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.6/sweetalert2.min.css">
+
+<!-- Include a polyfill for ES6 Promises (optional) for IE11 and Android browser -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js"></script>
 </head>
 <body class="hold-transition skin-blue sidebar-mini"  onload="myFooter()">
   <div class="wrapper">

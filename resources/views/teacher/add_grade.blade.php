@@ -2,6 +2,16 @@
 
 
 @section('content')
+
+@if(Session::has('message'))  
+    <script type="text/javascript">
+      swal(
+      'Grade have been Added!',
+      '',
+      'success',
+      );
+    </script>
+  @endif
 <section class="content-header">
  <h1>
            Add Grades
@@ -10,9 +20,9 @@
       <ol class="breadcrumb">
         <li><a href="/home"><i class="fa fa-dashboard"></i> Home</a></li>
         <li><a href="/teacher/list_subject"> List of Subject</a></li>
-         <li><a href=""> List of Student in Subject</a></li>
+         <li><a href="/teacher/list_subjstudent/{{$subject->subject_id}}"> List of Student in Subject</a></li>
         <li class="active">Add Grades </li>
-      </ol>
+      </ol> 
     </section>
     <div class="borderStudent">
      <h3 class="text-center">ADD Grade</h3>
@@ -25,6 +35,7 @@
                 <div class="panel-body">
 
                     @if($subject->first_grading===null)
+
                         <label for="first">First Grading</label>
                         <select id="percent" name="percent"  class="form-control">
                         <option selected disabled="">Select</option>
@@ -111,11 +122,11 @@
                         </form>
                     </div>
                     @else   
-
+                     <a href='{{ url("/teacher/update_grade/$subject->student_id") }}/{{$subject->subject_id}}'><button class="btn btn-info">EDIT</button></a>
                     <div class="form-group">
                         <label for="first">First Grading</label>
                         <input type="text" name="first" class="form-control" placeholder="First Grading" value="{{$subject->first_grading}}%" readonly>
-                    </div>
+                    </div> 
                     <hr>
                     @endif 
 
