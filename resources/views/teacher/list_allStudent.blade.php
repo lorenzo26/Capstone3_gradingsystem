@@ -32,7 +32,7 @@
         <section class = "content">
           <div class="row">
             <section class="col-lg-12">
-              <div class="box box-info">
+              
                 <div class="box-header">
                   <h3 class="box-title">Students found on Database</h3>
                 </div>
@@ -59,7 +59,7 @@
                    @endif
                   </tbody>
                 </table>
-              </div>
+             
             </section>
           </div>
         </section>
