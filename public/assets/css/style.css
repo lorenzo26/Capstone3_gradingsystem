@@ -23,7 +23,10 @@ body{
 }
 
 
-
+.dropdown_avatar {
+  width: 35px;
+  margin-right:  15px; 
+}
 
 /*/navbar*/
 
@@ -88,6 +91,12 @@ body{
   background-color: white;
   border-top: 5px solid #97cef0;
 
+}
+
+.box-profile .list-group{
+  
+ text-align: left; 
+ 
 }
 
 .form-control{

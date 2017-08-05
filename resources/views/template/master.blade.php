@@ -234,7 +234,15 @@
           <ul class="nav navbar-nav">
             <li class="dropdown user user-menu">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              
+              @if (Auth::user()->teachers->avatar==='')
+                    @if (Auth::user()->teachers->gender==="Male")
+                      <img class="image-round dropdown_avatar" src="{{URL::to('assets/images/avatar.png')}}">
+                    @else
+                      <img class="image-round dropdown_avatar" src="{{URL::to('assets/images/avatar3.png')}}">
+                    @endif
+                  @else         
+                    <img class="image-round dropdown_avatar" src="../../../{{Auth::user()->teachers->avatar}}" alt="avatar">  
+                  @endif
                 <span class="hidden-xs">{{ Auth::user()->teachers->fname}} </span>
               </a>
               <ul class="dropdown-menu">
@@ -344,6 +352,15 @@
           <ul class="nav navbar-nav">
             <li class="dropdown user user-menu">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+               @if (Auth::user()->students->avatar==='')
+                    @if (Auth::user()->students->gender==="Male")
+                      <img class="image-round dropdown_avatar" src="{{URL::to('assets/images/avatar.png')}}">
+                    @else
+                      <img class="image-round dropdown_avatar" src="{{URL::to('assets/images/avatar3.png')}}">
+                    @endif
+                  @else         
+                    <img class="image-round dropdown_avatar" src="../../../{{Auth::user()->students->avatar}}" alt="avatar">  
+                  @endif
                 <span class="hidden-xs">{{ Auth::user()->students->fname}} </span>
               </a>
               <ul class="dropdown-menu">

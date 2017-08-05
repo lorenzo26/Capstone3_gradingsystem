@@ -59,13 +59,7 @@
               <b>Member Since</b> <a class="pull-right">{{ Auth::user()->created_at}}</a>
             </li>
           </ul>
-          <form method="POST" enctype="multipart/form-data">
-          {{ csrf_field() }}
-      			<input type="file" name="f1" accept="image/*" required><br>			
-            <button type="submit" class="pull-right btn btn-default" name="uplogo">Update Avatar
-                <i class="fa fa-arrow-circle-up"></i>
-            </button>
-          </form>
+         
        	</div>
 			</div>
 		</section>
